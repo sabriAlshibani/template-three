@@ -1,0 +1,229 @@
+/* Start global rules */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #2196f3;
+  --main-color-alt: #1787e0;
+  --main-transition: 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "cairo", sans-serif;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End global rules */
+.header {
+  background-color: white;
+  position: relative;
+  -moz-box-shadow: 0 0 10px #ddd;
+  -webkit-box-shadow: 0 0 10px #ddd;
+  box-shadow: 0 0 10px #ddd;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+.header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  color: var(--main-color);
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  /* for not change the height of navbar */
+  height: 72px;
+}
+
+@media (max-width: 767px) {
+  .header .logo {
+    /* for take all width */
+    width: 100%;
+    height: 50px;
+  }
+}
+.header .main-nav {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .header .main-nav {
+    margin: auto;
+  }
+}
+
+.header .main-nav > li > a {
+  display: flex;
+  color: black;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  padding: 0 30px;
+  position: relative;
+  transition: var(--main-transition);
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .header .main-nav > li > a {
+    font-size: 13px;
+    height: 40px;
+    padding: 10px;
+  }
+}
+
+.header .main-nav > li > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--main-color);
+  top: 0;
+  left: -100%;
+  transition: var(--main-transition);
+}
+.header .main-nav > li > a:hover::before {
+  left: 0;
+}
+
+.header .main-nav > li > a:hover {
+  color: var(--main-color);
+  background-color: #fafafa;
+}
+/* End header */
+
+/* Start Landing */
+.landing {
+  position: relative;
+}
+.landing::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  width: 100%;
+  background-color: #ececec;
+  transform: skewY(-6deg);
+  transform-origin: top left;
+  min-height: calc(100vh - 72px);
+  z-index: -1;
+}
+
+.landing .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 72px);
+  padding-bottom: 120px;
+}
+.landing .image img {
+  width: 600px;
+  max-width: 100%;
+}
+@media (max-width : 991px) {
+  .landing .image {
+    display: none;
+  }
+}
+@media (max-width : 991px) {
+  .landing .text {
+    width: 100%;
+    text-align: center;
+  }
+}
+.landing .text {
+  flex: 1;
+}
+.landing .text h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: -2px;
+}
+@media (max-width : 767px) {
+  .landing .text h1 {
+    font-size: 24px;
+  }
+}
+.landing .text p {
+  font-size: 23px;
+  margin: 5px 0 0 0;
+  color: #666;
+  max-width: 500px;
+}
+
+@media (max-width : 991px) {
+  .landing .text p {
+      max-width: 100%;
+  }
+}
+@media (max-width : 767px) {
+  .landing .text p {
+    font-size: 16px;
+  }
+}
+
+.landing .go-down {
+  color: var(--main-color);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--main-transition);
+}
+.landing .go-down:hover {
+}
+.landing .go-down i {
+  transition: var(--main-transition);
+  font-size: 40px;
+  color: var(--main-color);
+}
+/* End Landing */
